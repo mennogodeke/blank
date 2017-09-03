@@ -21,12 +21,12 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  username: de_waai
+  username: identity_shield
   password: password
 
 development:
   <<: *default
-  database: de_waai_development
+  database: identity_shield_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: de_waai_test
+  database: identity_shield_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: de_waai_production
-  username: wishlist
-  password: <%= ENV['WISHLIST_DATABASE_PASSWORD'] %>
+  database: identity_shield_production
+  username: identity_shield
+  password: <%= ENV['IDENTITY_SHIELD_DATABASE_PASSWORD'] %>
